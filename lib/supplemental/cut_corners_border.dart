@@ -23,9 +23,9 @@ class CutCornersBorder extends OutlineInputBorder {
     this.cut = 7.0,
     double gapPadding = 2.0,
   }) : super(
-            borderSide: borderSide,
-            borderRadius: borderRadius,
-            gapPadding: gapPadding);
+      borderSide: borderSide,
+      borderRadius: borderRadius,
+      gapPadding: gapPadding);
 
   @override
   CutCornersBorder copyWith({
@@ -102,13 +102,13 @@ class CutCornersBorder extends OutlineInputBorder {
 
   @override
   void paint(
-    Canvas canvas,
-    Rect rect, {
-    double? gapStart,
-    double gapExtent = 0.0,
-    double gapPercentage = 0.0,
-    TextDirection? textDirection,
-  }) {
+      Canvas canvas,
+      Rect rect, {
+        double? gapStart,
+        double gapExtent = 0.0,
+        double gapPercentage = 0.0,
+        TextDirection? textDirection,
+      }) {
     assert(gapPercentage >= 0.0 && gapPercentage <= 1.0);
 
     final Paint paint = borderSide.toPaint();
@@ -117,7 +117,7 @@ class CutCornersBorder extends OutlineInputBorder {
       canvas.drawPath(_notchedCornerPath(outer.middleRect), paint);
     } else {
       final double extent =
-          lerpDouble(0.0, gapExtent + gapPadding * 2.0, gapPercentage)!;
+      lerpDouble(0.0, gapExtent + gapPadding * 2.0, gapPercentage)!;
       switch (textDirection!) {
         case TextDirection.rtl:
           {
